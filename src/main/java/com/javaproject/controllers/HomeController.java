@@ -43,7 +43,10 @@ public class HomeController {
         model.addAttribute("authorities", authorities);
         return "new-user";
     }
-
+    @GetMapping("/hello-user")
+    public String hello() {
+        return "hello-world";
+    }
     @PostMapping("/addUser")
     public String addUser(@RequestParam String userName, @RequestParam String password,
             @RequestParam String[] authorities, Model model, RedirectAttributes redirectAttrs) {
